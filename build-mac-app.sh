@@ -41,20 +41,22 @@ cmake --build .
 
 sw_version='2.1.1'
 
-mkdir -p SpaceCadetPinball.app/Contents/MacOS
-mkdir -p SpaceCadetPinball.app/Contents/Resources
-mkdir -p SpaceCadetPinball.app/Contents/Frameworks
+mkdir -p Space\ Cadet\ Pinball.app/Contents/MacOS
+mkdir -p Space\ Cadet\ Pinball.app/Contents/Resources
+mkdir -p Space\ Cadet\ Pinball.app/Contents/Frameworks
 
-cp -a Platform/macOS/Info.plist SpaceCadetPinball.app/Contents/
-cp -a Platform/macOS/SpaceCadetPinball.icns SpaceCadetPinball.app/Contents/Resources/
-cp -a Libs/SDL2.framework SpaceCadetPinball.app/Contents/Frameworks/
-cp -a Libs/SDL2_mixer.framework SpaceCadetPinball.app/Contents/Frameworks/
-cp -a bin/SpaceCadetPinball SpaceCadetPinball.app/Contents/MacOS/
+cp -a Platform/macOS/Info.plist Space\ Cadet\ Pinball.app/Contents/
+cp -a -R Platform/macOS/ Space\ Cadet\ Pinball.app/Contents/Resources/
+# since we copied entire directory, Info.plist is in Space\ Cadet\ Pinball.app/Contents/Resources/ which does not need to be there so we will remove it
+rm Space\ Cadet\ Pinball.app/Contents/Resources/Info.plist
+cp -a Libs/SDL2.framework Space\ Cadet\ Pinball.app/Contents/Frameworks/
+cp -a Libs/SDL2_mixer.framework Space\ Cadet\ Pinball.app/Contents/Frameworks/
+cp -a bin/SpaceCadetPinball Space\ Cadet\ Pinball.app/Contents/MacOS/
 
-sed -i '' "s/CHANGEME_SW_VERSION/$sw_version/" SpaceCadetPinball.app/Contents/Info.plist
+sed -i '' "s/CHANGEME_SW_VERSION/$sw_version/" Space\ Cadet\ Pinball.app/Contents/Info.plist
 
-echo -n "APPL????" > SpaceCadetPinball.app/Contents/PkgInfo
+echo -n "APPL????" > Space\ Cadet\ Pinball.app/Contents/PkgInfo
 
-hdiutil create -fs HFS+ -srcfolder SpaceCadetPinball.app -volname "SpaceCadetPinball $sw_version" "SpaceCadetPinball-$sw_version-mac.dmg"
+hdiutil create -fs HFS+ -srcfolder Space\ Cadet\ Pinball.app -volname "Space Cadet Pinball $sw_version" "Space Cadet Pinball $sw_version mac.dmg"
 
-rm -r SpaceCadetPinball.app
+rm -r Space\ Cadet\ Pinball.app

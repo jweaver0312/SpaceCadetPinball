@@ -88,7 +88,7 @@ brew tap draftbrew/tap
 brew install --no-quarantine space-cadet-pinball
 ```
 
-Be aware that the flag `--no-quarantime` will disable macOS's Gatekeeper during installation.
+Be aware that the flag `--no-quarantine` will disable macOS's Gatekeeper during installation.
 
 **Manual compilation:**
 

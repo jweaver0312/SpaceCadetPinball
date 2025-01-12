@@ -9,7 +9,7 @@
 	<key>CFBundleIconFile</key>
 	<string>SpaceCadetPinball.icns</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.github.k4zmu2a.spacecadetpinball</string>
+	<string>com.github.jweaver0312.spacecadetpinball</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleLongVersionString</key>
